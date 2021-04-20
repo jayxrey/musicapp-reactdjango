@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>musicdb </title>
+</head>
+
+<body>
+<h1>Registration </h1>
+<form action="" method="POST">
+{% csrf_token %}
+Username: <input type="text" name="username"/><br/>
+password: <input type="text" name="password"/><br/>
+<input type="submit" value="Register"/>
+</form>
+
+
+<h1>retrieve songs by username </h1>
+<form action="" method="GET">
+{% csrf_token %}
+Username: <input type="text" name="user"/><br/>
+<input type="submit" value="Get Songs"/>
+</form>
+{% for item in ratings %}
+    <p>{{ item.song.song }} --> {{ item.rating }} <br/></p>
+{% endfor %}
+
+<h1>retrieve price by song </h1>
+<form action="" method="GET">
+{% csrf_token %}
+song: <input type="text" name="song"/><br/>
+<input type="submit" value="Get Price"/>
+</form>
+{% for item in price %}
+    <p>{{ item.song.song }} --> {{ item.price }} dollars <br/></p>
+{% endfor %}
+
+{{ ERROR }}
+</body>
+
+</html>
