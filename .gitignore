@@ -2,3 +2,4 @@ node_modules/
 .DS_Store
 my-venv/
 __pycache__/
+*.py[cod]
