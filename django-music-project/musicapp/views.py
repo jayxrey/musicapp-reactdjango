@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import ArtistsSerializer
+from .serializers import UsersSerializer, ArtistsSerializer, RatingsSerializer, PriceSerializer
 from .models import Users, Artists, Ratings, Price
 from django.template import loader
 
@@ -42,6 +42,18 @@ def createuser(request):
         else:
             return HttpResponse(render(request, 'createuser.html', {'ERROR':'Input field(s) is empty'}))
 
+class UsersView(viewsets.ModelViewSet):       # add this
+  serializer_class = UsersSerializer          # add this
+  queryset = Users.objects.all()              # add this
+
 class ArtistsView(viewsets.ModelViewSet):       # add this
   serializer_class = ArtistsSerializer          # add this
   queryset = Artists.objects.all()              # add this
+
+class RatingsView(viewsets.ModelViewSet):       # add this
+  serializer_class = RatingsSerializer          # add this
+  queryset = Ratings.objects.all()              # add this
+
+class PriceView(viewsets.ModelViewSet):       # add this
+  serializer_class = PriceSerializer          # add this
+  queryset = Price.objects.all()              # add this

@@ -19,7 +19,13 @@ from rest_framework import routers                    # add this
 from musicapp import views                             # add this
 
 router = routers.DefaultRouter()                      # add this
-router.register(r'artistss', views.ArtistsView, 'artists')     # add this
+"""
+router.register(r'users', views.UsersView, 'user')     # add this
+
+"""
+router.register(r'artists', views.ArtistsView, 'artist')     # add this
+router.register(r'ratings', views.RatingsView, 'rating')     # add this
+router.register(r'prices', views.PriceView, 'price')     # add this
 
 urlpatterns = [
     path('musicapp/', include('musicapp.urls')),
