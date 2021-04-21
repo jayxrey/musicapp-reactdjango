@@ -30,7 +30,7 @@ class App extends React.Component {
   // We are using async calls here. Refer to the JavaScript
   // tutorial for how they work.
   axios
-    .get("http://localhost:8000/api/artistss/")
+    .get("http://localhost:8000/api/artists/")
     .then(res => this.setState({ songList: res.data }))
     .catch(err => console.log(err));
 };
@@ -106,20 +106,20 @@ handleSubmit = item => {
       // Backticks are useful because they allow us to use dynamic variables,
       // i.e., the item.id in this case. You can use this technique also
       // for authentication tokens.
-      .put(`http://localhost:8000/api/artistss/${item.id}/`, item)
+      .put(`http://localhost:8000/api/artists/${item.id}/`, item)
       .then(res => this.refreshList());
     return;
   }
   // If the item does not yet exist, use a POST request to write to the
   // database.
   axios
-    .post("http://localhost:8000/api/artistss/", item)
+    .post("http://localhost:8000/api/artists/", item)
     .then(res => this.refreshList());
 };
 // If the user triggers a delete event, send a delete request.
 handleDelete = item => {
   axios
-    .delete(`http://localhost:8000/api/artistss/${item.id}`)
+    .delete(`http://localhost:8000/api/artists/${item.id}`)
     .then(res => this.refreshList());
 };
 
