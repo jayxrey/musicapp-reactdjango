@@ -88,7 +88,7 @@ import React from "react";
                <Label for="album">Album</Label>
                  <Input
                    type="text"
-                   name="Album"
+                   name="album"
                    value={this.state.activeItem.album}
                    onChange={this.handleChange}
                    placeholder="Enter Album"
@@ -98,7 +98,7 @@ import React from "react";
                <Label for="genre">Genre</Label>
                  <Input
                    type="text"
-                   name="Genre"
+                   name="genre"
                    value={this.state.activeItem.genre}
                    onChange={this.handleChange}
                    placeholder="Enter Genre"

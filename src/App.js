@@ -44,7 +44,7 @@ renderItems = () => {
   // item.id, item.description, and item.title.
   return newItems.map(item => (
     <li
-      key={item.id}
+      id={item.id}
       className="list-group-item d-flex justify-content-between align-items-center"
     >
       <span
@@ -152,6 +152,8 @@ editItem = item => {
               activeItem={this.state.activeItem}
               toggle={this.toggle}
               onSave={this.handleSubmit}
+              toggle={this.toggle}
+              
             />
           ) : null}
         </main>

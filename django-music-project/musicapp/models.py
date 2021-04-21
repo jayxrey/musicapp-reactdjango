@@ -9,7 +9,7 @@ class Users(models.Model):
         return self.username
 
 class Artists(models.Model):
-    song = models.CharField(max_length=200, primary_key=True)
+    song = models.CharField(max_length=200)
     artist = models.CharField(max_length=200)
     album = models.CharField(max_length=200, default='single')
     genre = models.CharField(max_length=200, default='none')
